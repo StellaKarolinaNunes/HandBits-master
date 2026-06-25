@@ -1,241 +1,322 @@
-  <h1 align="center">
-       HandBits: Aprenda binário com as mãos
-    <br />
-    <br />
-    <a href="https://github.com/StellaKarolinaNunes/HandBits">
-     <img src="./banner.png" alt="HandBits Banner " width="100%">
-    </a>
-  </h1>
+<div align="center">
+
+# AutoOrganizer
+
+### Aplicação desktop em Python para organização automática de arquivos
+
+<a href="https://github.com/StellaKarolinaNunes/AutoOrganizer">
+  <img src="./banner.png" alt="Banner do projeto AutoOrganizer" width="100%">
+</a>
+
+<br>
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+
+<img src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tkinter">
+
+<img src="https://img.shields.io/badge/Desktop%20App-4B5563?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="Desktop App">
+
+<img src="https://img.shields.io/badge/Status-Em%20desenvolvimento-F59E0B?style=for-the-badge" alt="Status do projeto">
+
+<br><br>
+
+<p align="center">
+  <a href="https://github.com/StellaKarolinaNunes/AutoOrganizer">
+    <img src="https://img.shields.io/badge/⌘%20Explorar%20Código--Fonte-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explorar Código-Fonte">
+  </a>
+  <a href="https://github.com/user-attachments/assets/2a61656b-e2c3-4d83-9cf1-fe0e8c23369a">
+    <img src="https://img.shields.io/badge/▶%20Ver%20Demonstração-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Ver Demonstração">
+  </a>
+</p>
 
 </div>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/python-FFD43B?style=for-the-badge&logo=python&logoColor=white" alt="python">
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
-  <img src="https://img.shields.io/badge/MediaPipe-005C99?style=for-the-badge&logo=google&logoColor=white" alt="MediaPipe">
-  <img src="https://img.shields.io/badge/Status-Gratuito-green?style=for-the-badge" alt="Status">
-  <a href="https://github.com/StellaKarolinaNunes/HandBits/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StellaKarolinaNunes/HandBits?style=flat&logo=open-source-initiative&logoColor=white" alt="Licença"></a>
-</p>
+---
 
-<br>
+## Sobre o projeto
 
-## Por que HandBits?
+O **AutoOrganizer** é uma aplicação desktop desenvolvida em **Python** para automatizar a organização de arquivos em diretórios.
 
-O sistema binário é a base da computação moderna, mas seu aprendizado inicial costuma ser abstrato e puramente teórico. Muitos estudantes sentem dificuldade em visualizar como a combinação de bits resulta em valores decimais. O HandBits foi criado para preencher essa lacuna, transformando um conceito lógico em uma experiência física e visual, utilizando algo que todos temos à disposição: as mãos.
+A ferramenta permite que o usuário selecione uma pasta e organize automaticamente seus arquivos em subpastas categorizadas, como **Imagens**, **Documentos**, **Vídeos**, **Código** e **Outros**.
 
-## A Solução
+A aplicação foi criada com foco em produtividade, organização digital e experiência do usuário. Sua interface gráfica foi desenvolvida com **Tkinter**, enquanto a lógica do sistema foi organizada de forma modular para separar interface, arquivos, configurações e estilos visuais.
 
-A aplicação utiliza visão computacional avançada para converter os cinco dedos de uma mão em cinco bits (variando de 1 a 31 em uma mão, ou mais em versões expandidas). Ao levantar ou abaixar os dedos em frente à webcam, o jogador recebe feedback instantâneo sobre o valor que está representando. Essa abordagem cinestésica acelera a memorização das potências de dois e torna o entendimento de lógica digital natural e intuitivo.
+> Este projeto foi desenvolvido para fins educacionais e de portfólio, com foco em automação de tarefas, organização de código em Python e criação de interfaces desktop.
 
-## Funcionalidades Principais
+---
 
-As funcionalidades do projeto foram projetadas para acompanhar a curva de aprendizado do usuário:
+## Objetivo
 
-*   **Modo Livre:** Permite a exploração sem pressões, onde cada alteração nos dedos reflete imediatamente o valor decimal correspondente na tela.
-*   **Modo Tutorial:** Um guia passo a passo que introduz os números de forma sequencial, garantindo que o usuário entenda a progressão dos bits.
-*   **Modo Desafio:** Focado em agilidade, onde o sistema gera números aleatórios e o usuário deve representá-los o mais rápido possível, testando sua fluência no sistema binário.
-*   **Sistema de Gamificação:** Conquista de medalhas persistentes baseadas em tempo e progresso, incentivando a superação de recordes pessoais.
-*   **Feedback Multipataforma:** O software combina indicadores visuais (HUD e partículas) com feedback de voz para confirmar os resultados alcançados.
+Organizar arquivos manualmente pode ser uma tarefa repetitiva e demorada, principalmente em pastas com muitos documentos, imagens, vídeos e arquivos de código.
 
-## Estrutura de Pastas
+O AutoOrganizer foi desenvolvido para reduzir esse trabalho. Ao selecionar uma pasta, o sistema identifica as extensões dos arquivos, cria as categorias necessárias e move cada item para o local correspondente.
 
-A organização do projeto segue a Clean Architecture, separando responsabilidades para facilitar a manutenção e escalabilidade:
+A proposta é oferecer uma solução simples e prática para manter diretórios pessoais, acadêmicos e profissionais mais organizados.
 
-  ```bash
-HandBits/
-├── config/                   # Configurações globais
-│   ├── __init__.py
-│   ├── colors.py             # Paletas de cores e temas
-│   ├── medals.py             # Requisitos e dados das medalhas
-│   └── settings.py           # Resoluções e configurações fixas
-├── core/                     # Núcleo da aplicação
-│   ├── __init__.py
-│   ├── app.py                # Ponto central de execução
-│   ├── events.py             # Gerenciador de eventos (mouse/teclado)
-│   └── game_logic.py         # Regras de negócio e estado dos modos
-├── audio/                    # Módulo de Som
-│   ├── __init__.py
-│   └── sound_manager.py      # Integração TTS (voz) e efeitos sonoros
-├── tracking/                 # Visão Computacional
-│   ├── __init__.py
-│   └── hand_detector.py      # Extração de landmarks via MediaPipe
-├── ui/                       # Componentes de Interface Gráfica
-│   ├── __init__.py
-│   ├── dashboard.py          # Gráficos de performance
-│   ├── drawing_utils.py      # Utilitários de desenho (retângulos, partículas)
-│   ├── game_over.py          # Tela final
-│   ├── hand_guide_panel.py   # Guia visual em miniatura
-│   ├── hud.py                # Barra de status superior
-│   ├── medals_gallery.py     # Vitrine de conquistas
-│   ├── popups.py             # Avisos e notificações (toasts)
-│   └── top_navigation.py     # Menu superior de abas
-├── storage/                  # Persistência de Dados
-│   ├── __init__.py
-│   └── data_handler.py       # Leitura e salvamento com ofuscação (XOR)
-├── utils/                    # Utilitários globais
-│   ├── __init__.py
-│   └── locales.py            # Sistema de i18n (traduções PT/EN/ES)
-├── guia.png                  # Guia visual de mãos para o tutorial
-├── save.dat                  # Arquivo binário de progresso persistente
-├── main.py                   # Ponto de entrada que inicializa a aplicação
-├── requirements.txt          # Lista de dependências Python puras
-└── README.md                 # Documentação
-```
- 
- <br>
+---
 
- ##  Instalação
+## Funcionalidades
 
-### Pré-requisitos para Rodar HandBits na sua máquina
+* **Seleção de Pasta:** permite escolher o diretório que será organizado.
+* **Organização Automática:** identifica arquivos e move cada item para sua categoria correspondente.
+* **Criação de Pastas:** gera automaticamente subpastas conforme os tipos de arquivos encontrados.
+* **Categorias Inteligentes:** organiza arquivos em grupos como Imagens, Documentos, Vídeos, Código e Outros.
+* **Tratamento de Arquivos Desconhecidos:** extensões não identificadas são direcionadas para a pasta `OUTROS`.
+* **Interface Gráfica:** aplicação desktop construída com Tkinter.
+* **Feedback Visual:** apresenta informações para orientar o usuário durante o processo.
+* **Código Modular:** separação entre interface, lógica de negócio, configurações e utilitários.
+* **Estrutura Preparada para Logs:** organização planejada para registrar atividades e movimentações futuras.
 
-- Sistema Operacional: Linux (Recomendado para o feedback de voz nativo).
-- Python: Versão 3.10 ou superior.
-- Webcam: Necessária para o rastreamento das mãos via visão computacional.
-- Reprodução de Áudio: Necessário ter caixas de som ou fones de ouvido para o feedback sonar.
-- Speech Dispatcher (Linux): Para o comando spd-say funcionar, instale via terminal:
-sudo apt update && sudo apt install speech-dispatcher
+---
 
-### Tecnologias utilizadas
+## Tecnologias utilizadas
 
-- Linguagem: Python 3 - Base de toda a lógica do jogo.
-- Visão Computacional & Tracking:
-- MediaPipe - Framework do Google utilizado para detecção precisa dos 21 pontos das mãos (hand landmarks).
-- OpenCV - Usado para capturar vídeo da câmera, processar frames e renderizar toda a interface gráfica (HUD, botões e efeitos).
-- Processamento de Dados:
-- NumPy - Essencial para o cálculo eficiente das coordenadas espaciais dos dedos.
-- Arquitetura/Dev:
-- Modularização: Código estruturado em módulos independentes (hand_tracker, visuals, data_handler, etc).
-- Git: Utilizado para controle de versão e organização do repositório.
+| Tecnologia  | Aplicação no projeto                 |
+| ----------- | ------------------------------------ |
+| Python      | Linguagem principal da aplicação     |
+| Tkinter     | Construção da interface gráfica      |
+| ttk         | Componentes visuais da interface     |
+| os          | Manipulação de caminhos e diretórios |
+| shutil      | Movimentação de arquivos             |
+| PyInstaller | Empacotamento para executáveis       |
+| Git         | Controle de versão                   |
 
-<br>
+---
 
-###  Instalação Rápida
+## Destaques técnicos
 
-####  1. Clone o repositório
+* Arquitetura organizada por camadas e responsabilidades;
+* Separação entre lógica de arquivos, interface gráfica e configurações;
+* Uso de módulos reutilizáveis para facilitar manutenção;
+* Categorias de arquivos centralizadas em arquivo específico;
+* Cores e fontes organizadas separadamente;
+* Estrutura preparada para testes unitários;
+* Base preparada para futuras melhorias de interface;
+* Organização pensada para expansão com novos recursos.
+
+---
+
+## Demonstração
+
+<div align="center">
+
+![Gravação do AutoOrganizer](https://github.com/user-attachments/assets/2a61656b-e2c3-4d83-9cf1-fe0e8c23369a)
+
+</div>
+
+---
+
+## Estrutura do projeto
 
 ```bash
-   git clone https://github.com/StellaKarolinaNunes/HandBits.git
+AutoOrganizer/
+├── assets/
+│   ├── images/
+│   │   └── Banner.png
+│   │
+│   ├── styles/
+│   │   ├── colors.py
+│   │   ├── fonts.py
+│   │   └── __init__.py
+│   │
+│   └── __init__.py
+│
+├── src/
+│   ├── core/
+│   │   ├── file_organizer.py
+│   │   ├── logger.py
+│   │   └── __init__.py
+│   │
+│   ├── gui/
+│   │   ├── main_window.py
+│   │   ├── widgets/
+│   │   │   └── __init__.py
+│   │   └── __init__.py
+│   │
+│   ├── utils/
+│   │   ├── config.py
+│   │   ├── file_types.py
+│   │   └── __init__.py
+│   │
+│   └── __init__.py
+│
+├── tests/
+│   └── testes-unitarios/
+│
+├── AutoOrganizer.py
+├── requirements.txt
+├── README.md
+└── LICENSE
 ```
 
-####  2. acesse a pasta do projeto
+> Pastas e arquivos gerados durante a execução ou empacotamento, como `build/`, `dist/` e `__pycache__/`, não aparecem na estrutura principal porque não devem ser versionados no Git.
+
+---
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+Antes de iniciar, é necessário ter instalado:
+
+* Python `3.7` ou superior;
+* Git;
+* Tkinter;
+* Terminal ou editor compatível com Python;
+* VS Code, PyCharm ou outra IDE de sua preferência.
+
+No Linux, caso o Tkinter não esteja instalado, utilize:
 
 ```bash
-   cd HandBits
+sudo apt install python3-tk
 ```
 
-####  3. Crie e ative o ambiente virtual
+### 1. Clone o repositório
 
 ```bash
-   python -m venv venv
-   source venv/bin/activate
+git clone https://github.com/StellaKarolinaNunes/AutoOrganizer.git
 ```
 
-####  4. Agora sim, instale as dependências
+### 2. Acesse a pasta do projeto
 
 ```bash
-   pip install -r requirements.txt
+cd AutoOrganizer
 ```
 
-### "Compilar" para Executável com PyInstaller
+### 3. Instale as dependências
 
 ```bash
-   pip install pyinstaller
-   pyinstaller --onefile --windowed main.py
+pip install -r requirements.txt
 ```
+
+### 4. Execute a aplicação
+
+```bash
+python AutoOrganizer.py
+```
+
+Em alguns sistemas Linux, pode ser necessário utilizar:
+
+```bash
+python3 AutoOrganizer.py
+```
+
+---
+
+## Gerar executável
+
+### Windows
+
+```bash
+pip install pyinstaller
+pyinstaller --noconfirm --onefile --windowed AutoOrganizer.py
+```
+
+O executável será criado na pasta:
+
+```bash
+dist/
+```
+
+### Linux
+
+```bash
+pip install pyinstaller
+pyinstaller --noconfirm --onefile --windowed AutoOrganizer.py
+```
+
+Depois, execute o arquivo gerado dentro da pasta `dist/`.
+
+---
 
 ## Roadmap
 
-O desenvolvimento do HandBits está dividido em fases focadas em melhorar a didática e a tecnologia do projeto:
+### Interface e experiência do usuário
 
-### Fase 1: Fundação e Gamificação (Concluído)
-*   [x] Motor de rastreamento de mãos via MediaPipe.
-*   [x] Modos Livre, Tutorial e Desafio.
-*   [x] Sistema de medalhas e recordes locais persistentes.
-*   [x] Feedback de voz em tempo real.
+* [x] Interface gráfica organizada com Tkinter;
+* [x] Separação entre estilos, fontes e cores;
+* [ ] Alternância entre tema claro e escuro;
+* [ ] Suporte a arrastar e soltar pastas na interface;
+* [ ] Barra de progresso durante a organização;
+* [ ] Histórico visual de arquivos movidos;
+* [ ] Melhorias de acessibilidade na interface.
 
-### Fase 2: Expansão Didática (Em breve)
-*   [ ] **Modo Operações:** Ensinar somas e subtrações simples usando binários.
-*   [ ] **Conversão Reversa:** O sistema mostra um valor binário e o usuário deve dizer o decimal (ou vice-versa).
+### Funcionalidades principais
 
-### Fase 3: Interface e Acessibilidade
-*   [ ] **Suporte Multi-Idiomas:** Tradução para Inglês e Espanhol.
-*   [ ] **Feedback Sonoro Aprimorado:** Sons distintos para diferentes níveis de acerto/erro.
+* [x] Organização automática por extensão;
+* [x] Criação de pastas por categoria;
+* [x] Tratamento de arquivos não identificados;
+* [ ] Criação de categorias personalizadas;
+* [ ] Configuração de extensões por categoria;
+* [ ] Visualização dos arquivos antes da confirmação;
+* [ ] Função para desfazer a última organização;
+* [ ] Proteção contra sobrescrita de arquivos com nomes iguais.
 
-### Fase 4: Conectividade e Multiplataforma
-*   [ ] **Global Leaderboard:** Ranking online para competir com outros usuários.
-*   [ ] **HandBits Web:** Portabilidade para rodar diretamente no navegador (WebAssembly).
-*   [ ] **Versão Mobile (Flutter):** Aplicativo para smartphones usando a câmera do celular para praticar em qualquer lugar.
+### Recursos avançados
 
-<br>
+* [ ] Organização agendada de diretórios;
+* [ ] Histórico completo de movimentações;
+* [ ] Exportação de logs em `.txt`, `.csv` ou `.json`;
+* [ ] Filtros para ignorar arquivos e pastas específicas;
+* [ ] Sistema de backup antes de movimentações;
+* [ ] Suporte a múltiplos diretórios monitorados;
+* [ ] Empacotamento oficial para Windows e Linux.
 
- ##  Contribuição
-Contribuições são muito bem-vindas! Siga estes passos:
+---
 
-### Como Contribuir
-1. **Fork** este repositório
-2. **Clone** seu fork localmente
-3. **Crie** uma branch para sua feature: `git checkout -b feature/nova-funcionalidade`
-4. **Faça** suas alterações e commits
-5. **Teste** suas modificações
-6. **Abra** um Pull Request detalhado
+## Contribuição
 
-<br>
+Contribuições são bem-vindas.
 
-###  Diretrizes
+```bash
+# Faça um fork do projeto
 
-- Código limpo e bem comentado
-- Mensagens de commit claras e objetivas
-- Teste todas as funcionalidades
-- Mantenha a documentação atualizada
-- Siga os padrões de código existentes
+# Crie uma branch para sua funcionalidade
+git checkout -b feature/nova-funcionalidade
 
-<br>
+# Faça suas alterações
+git add .
 
-##  Licença
+# Crie um commit descritivo
+git commit -m "feat: adiciona nova funcionalidade"
+
+# Envie sua branch
+git push origin feature/nova-funcionalidade
+```
+
+Depois, abra um Pull Request explicando as alterações realizadas.
+
+### Diretrizes
+
+* Mantenha o código organizado e legível;
+* Utilize nomes claros para arquivos, funções e classes;
+* Preserve a separação entre interface e lógica de negócio;
+* Teste as funcionalidades antes de enviar alterações;
+* Atualize a documentação quando necessário;
+* Evite adicionar arquivos temporários, builds ou executáveis ao repositório.
+
+---
+
+## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
-``` bash
-MIT License - você pode usar, modificar e distribuir livremente,
-mantendo a referência ao repositório original.
+```text
+MIT License
+
+Você pode usar, modificar e distribuir este projeto,
+desde que mantenha os créditos e a referência ao repositório original.
 ```
 
- <br>
+---
 
- ## Contato
+## Créditos
 
- Se você tiver dúvidas, sugestões ou quiser saber mais sobre o projeto, entre em contato:
-
- - **Principais Desenvolvedores:** [Stella Karolina](https://github.com/StellaKarolinaNunes)
- - **Repositório:** [HandBits no GitHub](https://github.com/StellaKarolinaNunes/HandBits)
- - **LinkedIn:** [Stella Karolina Nunes](https://www.linkedin.com/in/stella-karolina/)
-
- <br>
-
- ## Créditos
-
- O **HandBits** é construído com o apoio de tecnologias e comunidades incríveis:
-
- - **[Python](https://www.python.org/):** Linguagem base para toda a lógica do projeto.
- - **[MediaPipe (Google)](https://google.github.io/mediapipe/):** Tecnologia de ponta para o rastreamento de mãos.
- - **[OpenCV](https://opencv.org/):** Processamento de imagem e renderização da interface.
- - **[NumPy](https://numpy.org/):** Cálculos matemáticos de alta performance.
- - **[Speech Dispatcher](https://devel.freebsoft.org/speechd):** Sistema de voz para feedback acessível.
-
- <br>
-
- 
-### Desenvolvimento Principal
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/StellaKarolinaNunes">
-        <img src="https://github.com/StellaKarolinaNunes.png" width="100px" alt="Stella Karolina"/>
-        <br />
-        <sub><b>Stella Karolina Nunes Peixoto</b></sub>
-        <br />
-      </a>
-    </td>
-  </tr>
-</table>
+* **Desenvolvimento:** [Stella Karolina Nunes](https://github.com/StellaKarolinaNunes)
+* **Linguagem:** [Python](https://www.python.org/)
+* **Interface Gráfica:** [Tkinter](https://docs.python.org/3/library/tkinter.html)
+* **Componentes Visuais:** [ttk](https://docs.python.org/3/library/tkinter.ttk.html)
+* **Manipulação de Arquivos:** [os](https://docs.python.org/3/library/os.html) e [shutil](https://docs.python.org/3/library/shutil.html)
+* **Empacotamento:** [PyInstaller](https://pyinstaller.org/)
+* **Badges:** [Shields.io](https://shields.io/)
+* **Ícones:** [Simple Icons](https://simpleicons.org/)
